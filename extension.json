@@ -1,0 +1,22 @@
+{
+	"name": "RandomPages",
+	"version": "0.5.0",
+	"author": [
+		"Aurelian Oancea",
+		"Krishna Maheshwari"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Random_Pages",
+	"descriptionmsg": "Allows to return one or more randomly selected pages",
+	"license-name": "GPL-3.0-or-later",
+	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.25.0"
+	},
+	"AutoloadClasses": {
+		"RandomPagesHooks": "RandomPages.hooks.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "RandomPagesHooks::aoRandomPages"
+	},
+	"manifest_version": 1
+}
