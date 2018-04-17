@@ -10,7 +10,7 @@ class RandomPagesHooks {
 	}
 
 	/**
-	 * Callback that replaces &lt;randompages /&gt; wiki tag with a list of links to random wiki pages
+	 * Callback that replaces <randompages /> wiki tag with a list of links to random wiki pages
 	 *
 	 * Available options:
 	 *
@@ -21,7 +21,7 @@ class RandomPagesHooks {
 	 * Sample Usage:
 	 *
 	 * <code>
-	 *  &lt;randompages limit="10" namespace="true" levels="10" /&gt;
+	 *  <randompages limit="10" namespace="true" levels="10" />
 	 * </code>
 	 *
 	 * Gets 10 random pages from the global namespace with 10 levels of style
