@@ -51,7 +51,7 @@ class RandomPagesHooks {
 		#KKM commnet out as it is now working.   https://www.mediawiki.org/wiki/Extension_talk:SearchBox
 		$title = Title::makeTitleSafe($row->page_namespace, $row->page_title);
 		// manually call __toString for php < 5.2
-		$buff .= sprintf('<a href="%s" title="%s">%s</a>', $title->getLocalURL(), $title->__toString(), $title->__toString());
+		$buff .= sprintf('<a href="%s" title="%s">%s</a><br>', $title->getLocalURL(), $title->__toString(), $title->__toString());
 		#$buff .= sprintf('<a href="%s" title="%s">%s</a>', $title->escapeLocalURL(), $title->__toString(), $title->__toString());
 		$buff .= '</span>';
 	  }
