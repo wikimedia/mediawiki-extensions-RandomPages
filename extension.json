@@ -6,11 +6,16 @@
 		"Krishna Maheshwari"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:Random_Pages",
-	"descriptionmsg": "Allows to return one or more randomly selected pages",
+	"descriptionmsg": "randompages-desc",
 	"license-name": "GPL-3.0-or-later",
 	"type": "parserhook",
 	"requires": {
 		"MediaWiki": ">= 1.25.0"
+	},
+	"MessagesDirs": {
+		"RandomPages": [
+			"i18n"
+		]
 	},
 	"AutoloadClasses": {
 		"RandomPagesHooks": "RandomPages.hooks.php"
