@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarah Bernabei"
+			"Sarah Bernabei",
+			"Beta16"
 		]
 	},
-	"randompages-desc": "Autorizza il ritorno di una o più pagine selezionate casualmente."
+	"randompages-desc": "Questa estensione consente il ritorno di una o più pagine selezionate casualmente."
 }
