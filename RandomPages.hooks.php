@@ -48,6 +48,7 @@ class RandomPagesHooks {
 	  $buff = '<div class="randomPages">';
 	  while( $row = $rs->fetchObject( $rs ) ) {
 		$buff .= '<span class="randomPages_level'.rand(1,$levels).'">';
+		# KKM comment out as it is now working. https://www.mediawiki.org/wiki/Extension_talk:SearchBox
 		$title = Title::makeTitleSafe($row->page_namespace, $row->page_title);
 		$buff .= sprintf('<a href="%s" title="%s">%s</a><br>', $title->getLocalURL(), $title->__toString(), $title->__toString());
 		$buff .= '</span>';
