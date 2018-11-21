@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Kghbln"
 		]
 	},
-	"randompages-desc": "Diese Erweiterung ermöglicht die Ausgabe einer oder mehrerer zufällig ausgewählter Seiten."
+	"randompages-desc": "Ermöglicht die zufällige Ausgabe einer oder mehrerer Seiten"
 }
