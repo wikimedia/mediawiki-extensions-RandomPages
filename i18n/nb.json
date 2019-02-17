@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"AnB"
 		]
 	},
-	"randompages-desc": "Denne utvidelsen gjør den mulig å returnere én eller flere tilfeldig valgte sider."
+	"randompages-desc": "Returnerer en liste med en eller flere slumputvalgte sider."
 }
