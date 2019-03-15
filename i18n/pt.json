@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"CaiusSPQR"
 		]
 	},
-	"randompages-desc": "Esta extensão permite devolver uma ou mais páginas selecionadas aleatoriamente."
+	"randompages-desc": "Retorna uma lista de uma ou mais páginas selecionadas aleatoriamente."
 }
