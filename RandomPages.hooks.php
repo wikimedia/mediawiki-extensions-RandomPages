@@ -43,7 +43,7 @@ class RandomPagesHooks {
 	  $sql .= $namespaced ? ' page_namespace = 0 ' : ' 1=1 ';
 	  $sql .= sprintf('order by rand() limit %d', $limit);
 	  // Execute that.
-	  $dbr = wfGetDB( DB_SLAVE );
+	  $dbr = wfGetDB( DB_REPLICA );
 	  $rs  = $dbr->query( $sql );
 	  $buff = '<div class="randomPages">';
 	  while( $row = $rs->fetchObject( $rs ) ) {
