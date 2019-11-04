@@ -33,7 +33,7 @@ class RandomPagesHooks {
 	  static function aoRandomPagesHook($text, $params, $parser) {
 	  global $wgDBprefix;
 	  // Prevent caching for this wiki page
-	  $parser->disableCache();
+	  $parser->getOutput()->updateCacheExpiry( 0 );
 	  // Get parameters
 	  $limit = isset($params['limit']) ? (int)$params['limit'] : 150;
 	  $namespaced = isset($params['namespace']) ? $params['namespace'] == 'true' : false;
