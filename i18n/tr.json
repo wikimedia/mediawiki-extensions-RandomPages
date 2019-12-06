@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Hedda",
-			"Sayginer"
+			"Sayginer",
+			"BaRaN6161 TURK"
 		]
 	},
-	"randompages-desc": "Bu eklenti, rastgele seçilen bir veya daha fazla sayfaya geri dönmeyi sağlar."
+	"randompages-desc": "Rastgele seçilen bir veya daha fazla sayfanın listesini döndürür."
 }
