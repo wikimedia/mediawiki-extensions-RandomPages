@@ -3,7 +3,8 @@
 	"version": "0.6.0",
 	"author": [
 		"Aurelian Oancea",
-		"Krishna Maheshwari"
+		"Krishna Maheshwari",
+		"Zoranzoki21"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:Random_Pages",
 	"descriptionmsg": "randompages-desc",
