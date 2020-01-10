@@ -18,7 +18,7 @@
 		]
 	},
 	"AutoloadClasses": {
-		"RandomPagesHooks": "RandomPages.hooks.php"
+		"RandomPagesHooks": "RandomPagesHooks.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "RandomPagesHooks::aoRandomPages"
