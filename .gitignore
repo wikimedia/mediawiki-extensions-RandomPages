@@ -3,3 +3,4 @@
 /composer.lock
 # Visual Studio Code
 .vscode/
+/.eslintcache
