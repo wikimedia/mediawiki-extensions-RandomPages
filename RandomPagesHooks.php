@@ -1,12 +1,13 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class RandomPagesHooks {
 	/**
 	 * Setups the mediawiki hook
 	 */
 	  static function aoRandomPages() {
-	  global $wgParser;
-	  $wgParser->setHook('randompages', [ __class__ , 'aoRandomPagesHook']);
+	  MediaWikiServices::getInstance()->getParser()->setHook('randompages', [ __class__ , 'aoRandomPagesHook']);
 	}
 
 	/**
