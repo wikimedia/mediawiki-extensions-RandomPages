@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby",
-			"AnB"
+			"AnB",
+			"Jon Harald Søby"
 		]
 	},
 	"randompages-desc": "Returnerer en liste med en eller flere slumputvalgte sider."

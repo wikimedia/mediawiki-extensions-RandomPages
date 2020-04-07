@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"CaiusSPQR",
 			"Hamilton Abreu",
-			"Vitorvicentevalente",
-			"CaiusSPQR"
+			"Vitorvicentevalente"
 		]
 	},
 	"randompages-desc": "Devolve uma lista de uma ou mais páginas selecionadas aleatoriamente."

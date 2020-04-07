@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"BaRaN6161 TURK",
 			"Hedda",
-			"Sayginer",
-			"BaRaN6161 TURK"
+			"Sayginer"
 		]
 	},
 	"randompages-desc": "Rastgele seçilen bir veya daha fazla sayfanın listesini döndürür."

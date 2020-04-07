@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarah Bernabei",
-			"Beta16"
+			"Beta16",
+			"Sarah Bernabei"
 		]
 	},
 	"randompages-desc": "Restituisce una o più pagine selezionate casualmente."
