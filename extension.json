@@ -22,7 +22,7 @@
 		"RandomPagesHooks": "RandomPagesHooks.php"
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "RandomPagesHooks::aoRandomPages"
+		"ParserFirstCallInit": "RandomPagesHooks::aoRandomPagesInit"
 	},
 	"manifest_version": 1
 }

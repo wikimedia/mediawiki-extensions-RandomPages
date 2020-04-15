@@ -1,13 +1,14 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 class RandomPagesHooks {
+
 	/**
 	 * Setups the mediawiki hook
+	 *
+	 * @param Parser $parser
 	 */
-	static function aoRandomPages() {
-		MediaWikiServices::getInstance()->getParser()->setHook( 'randompages', [ __class__, 'aoRandomPagesHook' ] );
+	public static function aoRandomPagesInit( $parser ) {
+		$parser->setHook( 'randompages', [ __CLASS__, 'aoRandomPagesHook' ] );
 	}
 
 	/**
@@ -15,7 +16,9 @@ class RandomPagesHooks {
 	 *
 	 * Available options:
 	 *
-	 * * limit int, to control how many links should be fetched randomly from the database, defaults to 150
+	 * * limit int, to control how many links should be fetched randomly from the database,
+	 * defaults to 150
+	 *
 	 * * namespace bool, true to restrict only to the global namspace, defaults to false
 	 * * levels int, levels of CSS applyed to each entry, defaluts to 5
 	 *
@@ -27,16 +30,17 @@ class RandomPagesHooks {
 	 *
 	 * Gets 10 random pages from the global namespace with 10 levels of style
 	 *
-	 * @param $text string, it should be null
-	 * @param $params array, additional parameters passed as attributes to randompages tag
-	 * @param $parser Parser, the Wiki Parser Object
+	 * @param string|null $text
+	 * @param array $params Additional parameters passed as attributes to randompages tag
+	 * @param Parser $parser The Wiki Parser Object
+	 * @return string
 	 */
-	static function aoRandomPagesHook( $text, $params, $parser ) {
+	public static function aoRandomPagesHook( $text, $params, $parser ) {
 		global $wgDBprefix;
 		// Prevent caching for this wiki page
 		$parser->getOutput()->updateCacheExpiry( 0 );
 		// Get parameters
-		$limit = isset( $params['limit'] ) ? (int)$params['limit'] : 150;
+		$limit = (int)( $params['limit'] ?? 150 );
 		$namespaced = isset( $params['namespace'] ) ? $params['namespace'] == 'true' : false;
 		$levels = isset( $params['levels'] ) ? (int)$params['levels'] : 5;
 		// Build sql query
@@ -49,10 +53,15 @@ class RandomPagesHooks {
 		$buff = '<div class="randomPages">';
 		while ( $row = $rs->fetchObject( $rs ) ) {
 			$buff .= '<span class="randomPages_level' . rand( 1, $levels ) . '">';
-			# KKM comment out as it is now working. https://www.mediawiki.org/wiki/Extension_talk:SearchBox
+			# KKM comment out as it is now working.
+			# https://www.mediawiki.org/wiki/Extension_talk:SearchBox
 			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
-			$buff .= sprintf( '<a href="%s" title="%s">%s</a><br>', $title->getLocalURL(),
-				$title->__toString(), $title->__toString() );
+			$buff .= sprintf(
+				'<a href="%s" title="%s">%s</a><br>',
+				htmlspecialchars( $title->getLocalURL() ),
+				htmlspecialchars( $title->getPrefixedText() ),
+				htmlspecialchars( $title->getPrefixedText() )
+			);
 			$buff .= '</span>';
 		}
 		return $buff . '</div>';
