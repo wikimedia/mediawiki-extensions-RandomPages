@@ -6,8 +6,8 @@ class RandomPagesHooks {
 	/**
 	 * Setups the mediawiki hook
 	 */
-	  static function aoRandomPages() {
-	  MediaWikiServices::getInstance()->getParser()->setHook('randompages', [ __class__ , 'aoRandomPagesHook']);
+	static function aoRandomPages() {
+		MediaWikiServices::getInstance()->getParser()->setHook( 'randompages', [ __class__, 'aoRandomPagesHook' ] );
 	}
 
 	/**
@@ -31,29 +31,30 @@ class RandomPagesHooks {
 	 * @param $params array, additional parameters passed as attributes to randompages tag
 	 * @param $parser Parser, the Wiki Parser Object
 	 */
-	  static function aoRandomPagesHook($text, $params, $parser) {
-	  global $wgDBprefix;
-	  // Prevent caching for this wiki page
-	  $parser->getOutput()->updateCacheExpiry( 0 );
-	  // Get parameters
-	  $limit = isset($params['limit']) ? (int)$params['limit'] : 150;
-	  $namespaced = isset($params['namespace']) ? $params['namespace'] == 'true' : false;
-	  $levels = isset($params['levels']) ? (int)$params['levels'] : 5;
-	  // Build sql query
-	  $sql = sprintf('select * from %spage where', $wgDBprefix);
-	  $sql .= $namespaced ? ' page_namespace = 0 ' : ' 1=1 ';
-	  $sql .= sprintf('order by rand() limit %d', $limit);
-	  // Execute that.
-	  $dbr = wfGetDB( DB_REPLICA );
-	  $rs  = $dbr->query( $sql );
-	  $buff = '<div class="randomPages">';
-	  while( $row = $rs->fetchObject( $rs ) ) {
-		$buff .= '<span class="randomPages_level'.rand(1,$levels).'">';
-		# KKM comment out as it is now working. https://www.mediawiki.org/wiki/Extension_talk:SearchBox
-		$title = Title::makeTitleSafe($row->page_namespace, $row->page_title);
-		$buff .= sprintf('<a href="%s" title="%s">%s</a><br>', $title->getLocalURL(), $title->__toString(), $title->__toString());
-		$buff .= '</span>';
-	}
+	static function aoRandomPagesHook( $text, $params, $parser ) {
+		global $wgDBprefix;
+		// Prevent caching for this wiki page
+		$parser->getOutput()->updateCacheExpiry( 0 );
+		// Get parameters
+		$limit = isset( $params['limit'] ) ? (int)$params['limit'] : 150;
+		$namespaced = isset( $params['namespace'] ) ? $params['namespace'] == 'true' : false;
+		$levels = isset( $params['levels'] ) ? (int)$params['levels'] : 5;
+		// Build sql query
+		$sql = sprintf( 'select * from %spage where', $wgDBprefix );
+		$sql .= $namespaced ? ' page_namespace = 0 ' : ' 1=1 ';
+		$sql .= sprintf( 'order by rand() limit %d', $limit );
+		// Execute that.
+		$dbr = wfGetDB( DB_REPLICA );
+		$rs = $dbr->query( $sql );
+		$buff = '<div class="randomPages">';
+		while ( $row = $rs->fetchObject( $rs ) ) {
+			$buff .= '<span class="randomPages_level' . rand( 1, $levels ) . '">';
+			# KKM comment out as it is now working. https://www.mediawiki.org/wiki/Extension_talk:SearchBox
+			$title = Title::makeTitleSafe( $row->page_namespace, $row->page_title );
+			$buff .= sprintf( '<a href="%s" title="%s">%s</a><br>', $title->getLocalURL(),
+				$title->__toString(), $title->__toString() );
+			$buff .= '</span>';
+		}
 		return $buff . '</div>';
 	}
 }
