@@ -51,7 +51,7 @@ class RandomPagesHooks {
 		$dbr = wfGetDB( DB_REPLICA );
 		$rs = $dbr->query( $sql );
 		$buff = '<div class="randomPages">';
-		while ( $row = $rs->fetchObject( $rs ) ) {
+		foreach ( $rs as $row ) {
 			$buff .= '<span class="randomPages_level' . rand( 1, $levels ) . '">';
 			# KKM comment out as it is now working.
 			# https://www.mediawiki.org/wiki/Extension_talk:SearchBox
