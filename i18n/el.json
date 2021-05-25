@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Giannaras99",
 			"NikosLikomitros",
 			"Nikosgranturismogt"
 		]
 	},
-	"randompages-desc": "Επιτρέπει την επιστροφή μια ή περισσοτέρων τυχαία επιλεγμένων σελίδων."
+	"randompages-desc": "Επιστρέφει μια λίστα με μία ή περισσότερες τυχαία επιλεγμένες σελίδες."
 }
