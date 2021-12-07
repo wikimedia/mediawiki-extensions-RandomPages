@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"DeRudySoulStorm"
+			"DeRudySoulStorm",
+			"Rail"
 		]
 	},
-	"randompages-desc": "To rozszerzenie umożliwia zwrócenie jednej lub więcej losowo wybranych stron."
+	"randompages-desc": "Zwraca listę jednej lub większej ilości losowo wybranych stron"
 }
