@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Banjo"
+			"Banjo",
+			"ArenaL5"
 		]
 	},
-	"randompages-desc": "Esta extensión permite obter unha ou máis páxinas seleccionadas de forma aleatoria"
+	"randompages-desc": "Obtén unha ou máis páxinas seleccionadas de forma aleatoria"
 }

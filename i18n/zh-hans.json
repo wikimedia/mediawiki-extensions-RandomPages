@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Lakejason0"
 		]
 	},
-	"randompages-desc": "此扩展允许返回一个或多个随机选择的页面。"
+	"randompages-desc": "返回一个或多个随机选择的页面列表。"
 }
