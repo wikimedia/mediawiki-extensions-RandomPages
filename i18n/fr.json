@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
-	"randompages-desc": "Renvoie une liste d'une ou plusieurs pages sélectionnées aléatoirement."
+	"randompages-desc": "Renvoie une liste d’une ou plusieurs pages sélectionnées aléatoirement."
 }
