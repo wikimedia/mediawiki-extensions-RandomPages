@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class RandomPagesHooks {
 
 	/**
@@ -48,7 +50,7 @@ class RandomPagesHooks {
 		$sql .= $namespaced ? ' page_namespace = 0 ' : ' 1=1 ';
 		$sql .= sprintf( 'order by rand() limit %d', $limit );
 		// Execute that.
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$rs = $dbr->query( $sql );
 		$buff = '<div class="randomPages">';
 		foreach ( $rs as $row ) {
